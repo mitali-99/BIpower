@@ -1,0 +1,589 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 413.59999999999991,
+            "y": 464
+          },
+          "nodeIndex": "UK BDMs",
+          "size": {
+            "height": 200,
+            "width": 507
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3603.8,
+            "y": 72
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6122.7,
+            "y": 2
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6518.9,
+            "y": 0
+          },
+          "nodeIndex": "Summary",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1630.2,
+            "y": 0
+          },
+          "nodeIndex": "UK_Cohorts",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 433.5,
+            "y": 66
+          },
+          "nodeIndex": "Canada FSI Cohorts",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2024.9,
+            "y": 48
+          },
+          "nodeIndex": "Canada E&R-BDM",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4393.2,
+            "y": 234.8
+          },
+          "nodeIndex": "WECohort",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3998.5,
+            "y": 12
+          },
+          "nodeIndex": "WE_BDM",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6930.5,
+            "y": 38
+          },
+          "nodeIndex": "Canada_FSI_BDM",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7753.6,
+            "y": 50
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 44.905697313103929,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 9
+          },
+          "nodeIndex": "UK BDMs",
+          "size": {
+            "height": 218,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 456
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 853,
+            "y": 386
+          },
+          "nodeIndex": "UK_Cohorts",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 382,
+            "y": 141
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 850,
+            "y": 13
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 252,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "UK Cohort",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 429
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 238,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 461,
+            "y": 211
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 207,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 819,
+            "y": 451
+          },
+          "nodeIndex": "Canada FSI Cohorts",
+          "size": {
+            "height": 215,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3,
+            "y": 31
+          },
+          "nodeIndex": "Canada_FSI_BDM",
+          "size": {
+            "height": 217,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 886,
+            "y": 22
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Canada FSI Cohort",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 469,
+            "y": 165
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 221,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 387
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 875,
+            "y": 409
+          },
+          "nodeIndex": "WECohort",
+          "size": {
+            "height": 271,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 14,
+            "y": 0
+          },
+          "nodeIndex": "WE_BDM",
+          "size": {
+            "height": 217,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 962,
+            "y": 0
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 241,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "WE FSI Cohort",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 488,
+            "y": 161
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 253,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3,
+            "y": 423
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 257,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 26,
+            "y": 0
+          },
+          "nodeIndex": "Canada E&R-BDM",
+          "size": {
+            "height": 250,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 854,
+            "y": 0
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 201,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 925,
+            "y": 457
+          },
+          "nodeIndex": "Canada FSI Cohorts",
+          "size": {
+            "height": 264,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Canada E&R Cohort",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 487,
+            "y": 264
+          },
+          "nodeIndex": "Sell BY Design",
+          "size": {
+            "height": 219,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 33,
+            "y": 59
+          },
+          "nodeIndex": "Canada FSI Cohorts",
+          "size": {
+            "height": 241,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 67,
+            "y": 458
+          },
+          "nodeIndex": "UK_Cohorts",
+          "size": {
+            "height": 214,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 885,
+            "y": 482
+          },
+          "nodeIndex": "WECohort",
+          "size": {
+            "height": 187,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 938,
+            "y": 82
+          },
+          "nodeIndex": "ACR",
+          "size": {
+            "height": 188,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 511,
+            "y": 625
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 214,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 57,
+            "y": 946
+          },
+          "nodeIndex": "Canada E&R-BDM",
+          "size": {
+            "height": 218,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 461,
+            "y": 931
+          },
+          "nodeIndex": "Canada_FSI_BDM",
+          "size": {
+            "height": 237,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 762,
+            "y": 933
+          },
+          "nodeIndex": "UK BDMs",
+          "size": {
+            "height": 216,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1028,
+            "y": 955
+          },
+          "nodeIndex": "WE_BDM",
+          "size": {
+            "height": 197,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Summary Page",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "UK Cohort",
+  "defaultDiagram": "All tables"
+}
