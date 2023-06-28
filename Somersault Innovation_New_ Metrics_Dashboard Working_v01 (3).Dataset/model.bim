@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.118.828.0 (23.06)"
+        "value": "2.118.867.0 (23.06)"
       },
       {
         "name": "PBI_ProTooling",
@@ -30754,6 +30754,28 @@
             ],
             "expression": "CALCULATE([Non_Qualified],USERELATIONSHIP(UK_Cohorts[Created Month],'Date'[Created month]),CROSSFILTER('Date'[Date],UK_Cohorts[Date],None),UK_Cohorts[Month no]>\"3\"&&UK_Cohorts[Month no]<>BLANK())",
             "lineageTag": "f6dd1029-ed9f-4789-85c0-28a90dd19b4c"
+          },
+          {
+            "name": "Final2",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE(SUM(ACR[Value])+[Summary ACR Value]+[WE Cohort ACR Value])",
+            "lineageTag": "5dc83f33-720d-4c22-8495-04cd6221828c"
+          },
+          {
+            "name": "Final color code ACR 2",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[Color code summary acr]+[Color code summary acr uk]+[Color code summary acr we]",
+            "lineageTag": "f9878d86-af7e-4f14-8c77-aa8f6739a081"
           }
         ],
         "partitions": [
