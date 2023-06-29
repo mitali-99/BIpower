@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"UK_Cohorts\",\"UK BDMs\",\"ACR\",\"WECohort\",\"Canada FSI Cohorts\",\"WE_BDM\",\"Canada_FSI_BDM\",\"Canada E&R-BDM\",\"Sell BY Design\",\"Date\",\"Canada FSI-BDM-16May\",\"ACR_Export\",\"uk bdm 23may\",\"uk bdm 23may (2)\",\"uk bdm 23may (3)\",\"WE bdm\",\"WE bdm (2)\",\"Canada E&R BDM\",\"Canada E&R BDM (2)\"]"
+        "value": "[\"UK_Cohorts\",\"UK BDMs\",\"ACR\",\"WECohort\",\"Canada FSI Cohorts\",\"WE_BDM\",\"Canada_FSI_BDM\",\"Canada E&R-BDM\",\"Sell BY Design\",\"Date\",\"Canada FSI-BDM-16May\",\"ACR_Export\",\"uk bdm 23may\",\"uk bdm 23may (2)\",\"uk bdm 23may (3)\",\"WE bdm\",\"WE bdm (2)\",\"Canada E&R BDM\",\"Canada E&R BDM (2)\",\"OneDrive - Systematix Infotech Pvt Ltd (1)\",\"Parameter1\",\"Transform Sample File\",\"Sample File\",\"Transform File\",\"Parameter2\",\"Transform Sample File (2)\",\"Sample File (2)\",\"Transform File (2)\",\"Parameter3\",\"Transform Sample File (3)\",\"Sample File (3)\",\"Transform File (3)\",\"Parameter4\",\"Transform Sample File (4)\",\"Sample File (4)\",\"Transform File (4)\",\"Parameter5\",\"Transform Sample File (5)\",\"Sample File (5)\",\"Transform File (5)\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -27218,6 +27218,418 @@
         "kind": "m",
         "lineageTag": "2c0d72df-3c38-4ee3-9a99-edc92c0f0d1e",
         "queryGroup": "23 May bdm"
+      },
+      {
+        "name": "Parameter1",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": "#\"Sample File\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File\", Type=\"Binary\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "1146774f-fd6a-4972-8adc-77eb8cf94222",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)\\Helper Queries"
+      },
+      {
+        "name": "Transform Sample File",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Excel.Workbook(Parameter1, null, true),",
+          "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+          "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])",
+          "in",
+          "    #\"Promoted Headers\""
+        ],
+        "kind": "m",
+        "lineageTag": "aa316763-6f4a-4e5a-8bf1-f76d7e8c7c01",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "name": "Sample File",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+          "    #\"Filtered Rows\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\")),",
+          "    Navigation1 = #\"Filtered Rows\"{0}[Content]",
+          "in",
+          "    Navigation1"
+        ],
+        "kind": "m",
+        "lineageTag": "bb9849b9-6da0-4c52-a51f-a97295d0a9a3",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)\\Helper Queries"
+      },
+      {
+        "name": "Transform File",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Function"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = (Parameter1) => let",
+          "        Source = Excel.Workbook(Parameter1, null, true),",
+          "        Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+          "        #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])",
+          "    in",
+          "        #\"Promoted Headers\"",
+          "in",
+          "    Source"
+        ],
+        "kind": "m",
+        "lineageTag": "7c3da7a6-be09-4765-9881-899a187fcda0",
+        "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File\"\"}\" ]",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)\\Helper Queries"
+      },
+      {
+        "name": "Parameter2",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": "#\"Sample File (2)\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File (2)\", Type=\"Binary\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "01b4f41b-7512-4e8a-9319-fdf58379a2f4",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)\\Helper Queries"
+      },
+      {
+        "name": "Transform Sample File (2)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Excel.Workbook(Parameter2, null, true),",
+          "    Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+          "    #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])",
+          "in",
+          "    #\"Promoted Headers\""
+        ],
+        "kind": "m",
+        "lineageTag": "15aea8d6-cace-4148-a7a9-50dc6d89c088",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)"
+      },
+      {
+        "name": "Sample File (2)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+          "    #\"Filtered Rows1\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\" or [Name] = \"BDM by Cohorts_Master (1).xlsx\" or [Name] = \"Canada Cohorts Weekly Pipeline_06.06.23_final.xlsx\" or [Name] = \"Canada FSI Weekly Pipeline_06.06.23 (1).xlsx\" or [Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\" or [Name] = \"Sell By Design - Microsoft Accelerator FY23 Cohorts and Accounts (4).xlsx\" or [Name] = \"UK Cohorts Weekly Pipeline 06.06.23 (1).xlsx\" or [Name] = \"WE Cohorts Weekly Pipeline_06.06.23_final (1).xlsx\")),",
+          "    Navigation1 = #\"Filtered Rows1\"{0}[Content]",
+          "in",
+          "    Navigation1"
+        ],
+        "kind": "m",
+        "lineageTag": "009ea4e6-3ded-4be3-90a4-23fc54f39d28",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)\\Helper Queries"
+      },
+      {
+        "name": "Transform File (2)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Function"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = (Parameter2) => let",
+          "        Source = Excel.Workbook(Parameter2, null, true),",
+          "        Sheet1_Sheet = Source{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+          "        #\"Promoted Headers\" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])",
+          "    in",
+          "        #\"Promoted Headers\"",
+          "in",
+          "    Source"
+        ],
+        "kind": "m",
+        "lineageTag": "579060e8-0547-4757-9e9b-a189d95fcb24",
+        "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File (2)\"\"}\" ]",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)\\Helper Queries"
+      },
+      {
+        "name": "Parameter3",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": "#\"Sample File (3)\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File (3)\", Type=\"Binary\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "4b9950b7-b2e8-467c-b377-c3c6b25932d3",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)\\Helper Queries"
+      },
+      {
+        "name": "Transform Sample File (3)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Excel.Workbook(Parameter3, null, true),",
+          "    Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "in",
+          "    Table1_Table"
+        ],
+        "kind": "m",
+        "lineageTag": "93ce1de2-3969-4e86-814f-a50e9b6424da",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)"
+      },
+      {
+        "name": "Sample File (3)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+          "    #\"Filtered Rows1\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\" or [Name] = \"BDM by Cohorts_Master (1).xlsx\" or [Name] = \"Canada Cohorts Weekly Pipeline_06.06.23_final.xlsx\" or [Name] = \"Canada FSI Weekly Pipeline_06.06.23 (1).xlsx\" or [Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\" or [Name] = \"Sell By Design - Microsoft Accelerator FY23 Cohorts and Accounts (4).xlsx\" or [Name] = \"UK Cohorts Weekly Pipeline 06.06.23 (1).xlsx\" or [Name] = \"WE Cohorts Weekly Pipeline_06.06.23_final (1).xlsx\")),",
+          "    #\"Filtered Hidden Files1\" = Table.SelectRows(#\"Filtered Rows1\", each [Attributes]?[Hidden]? <> true),",
+          "    #\"C:\\Users\\mitali chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\_SBD Program BDM Data changes- 06 19 23 (1) xlsx\" = #\"Filtered Hidden Files1\"{[#\"Folder Path\"=\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\\",Name=\"SBD Program BDM Data changes- 06.19.23 (1).xlsx\"]}[Content]",
+          "in",
+          "    #\"C:\\Users\\mitali chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\_SBD Program BDM Data changes- 06 19 23 (1) xlsx\""
+        ],
+        "kind": "m",
+        "lineageTag": "0b2cac4d-459d-4de1-a670-026705aeb056",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)\\Helper Queries"
+      },
+      {
+        "name": "Transform File (3)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Function"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = (Parameter3) => let",
+          "        Source = Excel.Workbook(Parameter3, null, true),",
+          "        Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "    in",
+          "        Table1_Table",
+          "in",
+          "    Source"
+        ],
+        "kind": "m",
+        "lineageTag": "28bba1a8-a08d-45b3-b4b3-4ec9f5675b9f",
+        "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File (3)\"\"}\" ]",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)\\Helper Queries"
+      },
+      {
+        "name": "Parameter4",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": "#\"Sample File (4)\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File (4)\", Type=\"Binary\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "01dadfb8-26d2-41b3-8950-ca4fb320cfbd",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)\\Helper Queries"
+      },
+      {
+        "name": "Transform Sample File (4)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Excel.Workbook(Parameter4, null, true),",
+          "    Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "in",
+          "    Table1_Table"
+        ],
+        "kind": "m",
+        "lineageTag": "7d7e3d2c-e0e2-4e48-b574-f31d1155a668",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)"
+      },
+      {
+        "name": "Sample File (4)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+          "    #\"Filtered Rows1\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\" or [Name] = \"BDM by Cohorts_Master (1).xlsx\" or [Name] = \"Canada Cohorts Weekly Pipeline_06.06.23_final.xlsx\" or [Name] = \"Canada FSI Weekly Pipeline_06.06.23 (1).xlsx\" or [Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\" or [Name] = \"Sell By Design - Microsoft Accelerator FY23 Cohorts and Accounts (4).xlsx\" or [Name] = \"UK Cohorts Weekly Pipeline 06.06.23 (1).xlsx\" or [Name] = \"WE Cohorts Weekly Pipeline_06.06.23_final (1).xlsx\")),",
+          "    #\"C:\\Users\\mitali chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\_SBD Program BDM Data changes- 06 19 23 (1) xlsx\" = #\"Filtered Rows1\"{[#\"Folder Path\"=\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\\",Name=\"SBD Program BDM Data changes- 06.19.23 (1).xlsx\"]}[Content]",
+          "in",
+          "    #\"C:\\Users\\mitali chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\\_SBD Program BDM Data changes- 06 19 23 (1) xlsx\""
+        ],
+        "kind": "m",
+        "lineageTag": "c35e381d-0fc8-461f-980a-892800c6c12d",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)\\Helper Queries"
+      },
+      {
+        "name": "Transform File (4)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Function"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = (Parameter4) => let",
+          "        Source = Excel.Workbook(Parameter4, null, true),",
+          "        Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "    in",
+          "        Table1_Table",
+          "in",
+          "    Source"
+        ],
+        "kind": "m",
+        "lineageTag": "ec6c7eac-eec4-4264-8619-4febc83eb48e",
+        "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File (4)\"\"}\" ]",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)\\Helper Queries"
+      },
+      {
+        "name": "Parameter5",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": "#\"Sample File (5)\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File (5)\", Type=\"Binary\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "31355f65-904d-413d-a57a-9a38ccd353d1",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)\\Helper Queries"
+      },
+      {
+        "name": "Transform Sample File (5)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Excel.Workbook(Parameter5, null, true),",
+          "    Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "in",
+          "    Table1_Table"
+        ],
+        "kind": "m",
+        "lineageTag": "d3db9da4-269c-4756-b000-4268b518c343",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)"
+      },
+      {
+        "name": "Sample File (5)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Binary"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+          "    #\"Filtered Rows1\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\" or [Name] = \"BDM by Cohorts_Master (1).xlsx\" or [Name] = \"Canada Cohorts Weekly Pipeline_06.06.23_final.xlsx\" or [Name] = \"Canada FSI Weekly Pipeline_06.06.23 (1).xlsx\" or [Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\" or [Name] = \"Sell By Design - Microsoft Accelerator FY23 Cohorts and Accounts (4).xlsx\" or [Name] = \"UK Cohorts Weekly Pipeline 06.06.23 (1).xlsx\" or [Name] = \"WE Cohorts Weekly Pipeline_06.06.23_final (1).xlsx\")),",
+          "    #\"Filtered Hidden Files1\" = Table.SelectRows(#\"Filtered Rows1\", each [Attributes]?[Hidden]? <> true),",
+          "    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Hidden Files1\", \"Transform File (4)\", each #\"Transform File (4)\"([Content])),",
+          "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),",
+          "    #\"Filtered Rows\" = Table.SelectRows(#\"Renamed Columns1\", each ([Source.Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\")),",
+          "    Navigation1 = #\"Filtered Rows\"{0}[Content]",
+          "in",
+          "    Navigation1"
+        ],
+        "kind": "m",
+        "lineageTag": "60b2b51f-bb6c-4cb1-8aa1-ee6fe1601e57",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)\\Helper Queries"
+      },
+      {
+        "name": "Transform File (5)",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Function"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = (Parameter5) => let",
+          "        Source = Excel.Workbook(Parameter5, null, true),",
+          "        Table1_Table = Source{[Item=\"Table1\",Kind=\"Table\"]}[Data]",
+          "    in",
+          "        Table1_Table",
+          "in",
+          "    Source"
+        ],
+        "kind": "m",
+        "lineageTag": "e5bdb187-4fda-4928-8214-96bc1274a36b",
+        "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File (5)\"\"}\" ]",
+        "queryGroup": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)\\Helper Queries"
       }
     ],
     "queryGroups": [
@@ -27256,6 +27668,96 @@
           }
         ],
         "folder": "23 May bdm"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "4"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (1)\\Helper Queries"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "6"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (2)\\Helper Queries"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "8"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (3)\\Helper Queries"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "10"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (4)\\Helper Queries"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "12"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Transform File from OneDrive - Systematix Infotech Pvt Ltd (5)\\Helper Queries"
       }
     ],
     "relationships": [
@@ -27427,6 +27929,61 @@
         "toCardinality": "many",
         "toColumn": "Created Month",
         "toTable": "UK_Cohorts"
+      },
+      {
+        "name": "ad415691-e1f7-41db-a9ea-586de08532ff",
+        "fromColumn": "Baseline Date",
+        "fromTable": "OneDrive - Systematix Infotech Pvt Ltd (1)",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_290dda3f-565c-44e4-be12-f1bb7c8c0c0b"
+      },
+      {
+        "name": "eb77c45d-43ac-4e70-9a74-e56b6ac5b136",
+        "fromColumn": "Current Date",
+        "fromTable": "OneDrive - Systematix Infotech Pvt Ltd (1)",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_4da6270f-9f55-47ce-9098-b2d89db28323"
+      },
+      {
+        "name": "7354c829-4802-46d8-9232-b352e9cca330",
+        "fromColumn": "Account Name on BDM raw data list",
+        "fromTable": "Sell BY Design",
+        "toColumn": "Account Name on BDM raw data list",
+        "toTable": "OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "name": "535ae968-87e9-4b79-8d5f-a6fe97ab1097",
+        "fromColumn": "Account Name",
+        "fromTable": "UK BDMs",
+        "isActive": false,
+        "toColumn": "Account Name (To Be Used in All Reporting)",
+        "toTable": "OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "name": "60b3c73a-fff5-4541-825c-76f330262c59",
+        "fromColumn": "Account",
+        "fromTable": "Canada E&R-BDM",
+        "isActive": false,
+        "toColumn": "Account Name (To Be Used in All Reporting)",
+        "toTable": "OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "name": "6fccffa2-9252-4510-ab10-7c381bf00bc2",
+        "fromColumn": "Account Name",
+        "fromTable": "Canada_FSI_BDM",
+        "isActive": false,
+        "toColumn": "Account Name (To Be Used in All Reporting)",
+        "toTable": "OneDrive - Systematix Infotech Pvt Ltd (1)"
+      },
+      {
+        "name": "58589283-3379-48fd-a5b1-807d0e923498",
+        "fromColumn": "Account",
+        "fromTable": "ACR",
+        "isActive": false,
+        "toColumn": "Account Name (To Be Used in All Reporting)",
+        "toTable": "OneDrive - Systematix Infotech Pvt Ltd (1)"
       }
     ],
     "sourceQueryCulture": "en-IN",
@@ -29550,6 +30107,214 @@
         "showAsVariationsOnly": true
       },
       {
+        "name": "LocalDateTable_290dda3f-565c-44e4-be12-f1bb7c8c0c0b",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "4ad0ba28-a190-4dbb-b238-6ddb29d43c60",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d7beb90c-ddb8-45de-b00b-e841b348b036",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "7f878ef4-15f8-45d6-af6a-81ba5c17e67c",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "11405ae1-9e8e-460d-8373-5250ad603df9",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "05619ef4-6039-4d1c-afc2-b4bfa476780c",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "e9e41911-28d7-4c64-b282-3e3e056d5e34",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "2bf64803-8a63-46cc-8be3-20b6a4894557",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "e70d3e40-6a03-4aa7-85c0-85c86fce6ec5",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "ca9155d9-ab6b-4629-aa3e-023acc983539",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "f3a6c9e9-257b-4304-8341-91770c7428bf",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "bb044c80-6895-461d-8f79-15b023cdd303",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "fde3163b-eaff-41f6-adee-ea5343a715b2"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "589a76e2-564a-41dc-b569-5b5a3f1d97e7",
+        "partitions": [
+          {
+            "name": "LocalDateTable_290dda3f-565c-44e4-be12-f1bb7c8c0c0b-46727e38-fbae-4b6c-a28b-a025f0279be5",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('OneDrive - Systematix Infotech Pvt Ltd (1)'[Baseline Date])), 1, 1), Date(Year(MAX('OneDrive - Systematix Infotech Pvt Ltd (1)'[Baseline Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
         "name": "LocalDateTable_2ba381bf-04fa-46af-a844-f8c961d9e64e",
         "annotations": [
           {
@@ -29966,6 +30731,214 @@
         "showAsVariationsOnly": true
       },
       {
+        "name": "LocalDateTable_4da6270f-9f55-47ce-9098-b2d89db28323",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "b2abd0f6-9074-4ab5-a8a6-2ebe3be26ca0",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "609bf4b1-9285-4f19-ab44-8acdae5d612b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "681cf7b3-a8be-42f7-93c2-1111f4adf02f",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "581ca9ce-8e08-4250-b05c-56ebdef6642e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "dda8d49a-88dd-4468-8752-c6e1a72fd4ee",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "80aa4feb-1dfe-4dc6-b143-6c02c38d159a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "1575f8ab-7c3f-4d61-a698-abcd3465fa71",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "b5966b55-1336-42e1-ab4b-bf0684fb10b5",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "109bdc4e-2b5e-4c91-8a6c-2ca2e6420c5c",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "b6168c86-05fd-4d94-8d41-bdb2b207a032",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "cf44d628-fb7d-4dc5-a7ef-a1c7e82ad4ed",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "43c66671-33c6-4dca-80fd-2d0111c1e21c"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "19208085-348c-46ba-9637-6b5752698cde",
+        "partitions": [
+          {
+            "name": "LocalDateTable_4da6270f-9f55-47ce-9098-b2d89db28323-15bebdd2-f42a-43c0-831e-4b3df21f9908",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('OneDrive - Systematix Infotech Pvt Ltd (1)'[Current Date])), 1, 1), Date(Year(MAX('OneDrive - Systematix Infotech Pvt Ltd (1)'[Current Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
         "name": "LocalDateTable_a2335a29-0813-43ca-8d8a-b50eae7ca3d2",
         "annotations": [
           {
@@ -30172,6 +31145,229 @@
           }
         ],
         "showAsVariationsOnly": true
+      },
+      {
+        "name": "OneDrive - Systematix Infotech Pvt Ltd (1)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Account Name (To Be Used in All Reporting)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4dcb70eb-3d37-4538-80bb-08d70aa72098",
+            "sourceColumn": "Account Name (To Be Used in All Reporting)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Account Name on BDM raw data list",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0b8259a8-6db3-4ccd-9e81-e7f0be1d6ffd",
+            "sourceColumn": "Account Name on BDM raw data list",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Baseline Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "25ec0e3b-5441-428a-b6b5-d2331e97ef56",
+            "sourceColumn": "Baseline Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_290dda3f-565c-44e4-be12-f1bb7c8c0c0b"
+                },
+                "isDefault": true,
+                "relationship": "ad415691-e1f7-41db-a9ea-586de08532ff"
+              }
+            ]
+          },
+          {
+            "name": "Baseline IT BDM (April 17th, 2023)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "69611374-f52f-4344-ba49-c6d8f380f544",
+            "sourceColumn": "Baseline IT BDM (April 17th, 2023)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Baseline non IT BDM (April 17th, 2023)2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "27a497df-963a-4d3f-97d7-e7f72d542a97",
+            "sourceColumn": "Baseline non IT BDM (April 17th, 2023)2",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Cohort",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5a841e44-8dbe-4a5a-8c01-b8622757ca93",
+            "sourceColumn": "Cohort",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Current Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9adda730-c9bb-486d-bcb3-e006748dcb4b",
+            "sourceColumn": "Current Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_4da6270f-9f55-47ce-9098-b2d89db28323"
+                },
+                "isDefault": true,
+                "relationship": "eb77c45d-43ac-4e70-9a74-e56b6ac5b136"
+              }
+            ]
+          },
+          {
+            "name": "Total Baseline BDM Contacts (April 17th, 2023)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "feb322f7-c553-4dfe-b926-caab8f48e12b",
+            "sourceColumn": "Total Baseline BDM Contacts (April 17th, 2023)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total New IT BDM",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2fedf486-2211-4e9d-bed8-4fc59a5698ca",
+            "sourceColumn": "Total New IT BDM",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total New Non IT Contacts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "67b926c3-3f6a-4e0e-bcca-e83bb5111af8",
+            "sourceColumn": "Total New Non IT Contacts",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Total new BDM Contacts",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "93a1d0bf-050a-4b6d-9864-f6684df6cbe3",
+            "sourceColumn": "Total new BDM Contacts",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "5a6dc234-740c-438b-9357-de94ec442081",
+        "partitions": [
+          {
+            "name": "OneDrive - Systematix Infotech Pvt Ltd (1)-45e7706e-fec8-49f6-b128-c512723745cb",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Folder.Files(\"C:\\Users\\mitali.chouhan\\OneDrive - Systematix Infotech Pvt Ltd (1)\"),",
+                "    #\"Filtered Rows1\" = Table.SelectRows(Source, each ([Name] = \"ACR L&C Baseline 05.05.2023 (1).xlsx\" or [Name] = \"BDM by Cohorts_Master (1).xlsx\" or [Name] = \"Canada Cohorts Weekly Pipeline_06.06.23_final.xlsx\" or [Name] = \"Canada FSI Weekly Pipeline_06.06.23 (1).xlsx\" or [Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\" or [Name] = \"Sell By Design - Microsoft Accelerator FY23 Cohorts and Accounts (4).xlsx\" or [Name] = \"UK Cohorts Weekly Pipeline 06.06.23 (1).xlsx\" or [Name] = \"WE Cohorts Weekly Pipeline_06.06.23_final (1).xlsx\")),",
+                "    #\"Filtered Hidden Files1\" = Table.SelectRows(#\"Filtered Rows1\", each [Attributes]?[Hidden]? <> true),",
+                "    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Hidden Files1\", \"Transform File (4)\", each #\"Transform File (4)\"([Content])),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Renamed Columns1\", each ([Source.Name] = \"SBD Program BDM Data changes- 06.19.23 (1).xlsx\")),",
+                "    #\"Filtered Hidden Files2\" = Table.SelectRows(#\"Filtered Rows\", each [Attributes]?[Hidden]? <> true),",
+                "    #\"Invoke Custom Function2\" = Table.AddColumn(#\"Filtered Hidden Files2\", \"Transform File (5)\", each #\"Transform File (5)\"([Content])),",
+                "    #\"Removed Other Columns1\" = Table.SelectColumns(#\"Invoke Custom Function2\", {\"Transform File (5)\"}),",
+                "    #\"Expanded Table Column1\" = Table.ExpandTableColumn(#\"Removed Other Columns1\", \"Transform File (5)\", Table.ColumnNames(#\"Transform File (5)\"(#\"Sample File (5)\"))),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Table Column1\",{{\"Cohort\", type text}, {\"Account Name (To Be Used in All Reporting)\", type text}, {\"Account Name on BDM raw data list\", type text}, {\"Total Baseline BDM Contacts (April 17th, 2023)\", Int64.Type}, {\"Baseline IT BDM (April 17th, 2023)\", Int64.Type}, {\"Baseline non IT BDM (April 17th, 2023)2\", Int64.Type}, {\"Total new BDM Contacts\", Int64.Type}, {\"Total New IT BDM\", Int64.Type}, {\"Total New Non IT Contacts\", Int64.Type}, {\"Baseline Date\", type date}, {\"Current Date\", type date}}),",
+                "    #\"Filtered Rows2\" = Table.SelectRows(#\"Changed Type\", each ([Cohort] <> null))",
+                "in",
+                "    #\"Filtered Rows2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
       },
       {
         "name": "Sell BY Design",
